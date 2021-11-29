@@ -7,7 +7,11 @@ const Home = () => {
   useEffect(() => {
     loadLocations();
   }, [loadLocations]);
-  return <div></div>;
+  return (
+    <div>
+      <button>Register</button>
+    </div>
+  );
 };
 
 export default Home;
