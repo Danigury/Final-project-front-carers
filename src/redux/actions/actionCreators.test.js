@@ -1,4 +1,4 @@
-import { loadLocationsActions } from "./actionCreators";
+import { loadLocationsAction } from "./actionCreators";
 import actionTypes from "./actionTypes";
 
 describe("Given an actionCreators", () => {
@@ -152,7 +152,7 @@ describe("Given an actionCreators", () => {
         locations: locationsToListTest,
       };
 
-      const result = loadLocationsActions(locationsToListTest);
+      const result = loadLocationsAction(locationsToListTest);
       expect(result).toEqual(expected);
     });
   });
