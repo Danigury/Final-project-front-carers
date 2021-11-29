@@ -1,10 +1,11 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import { loginUserAction, logoutUserAction } from "../actions/actionCreators";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
     const response = await axios.post(
-      process.env.REACT_APP_LOCATIONS_URL_LOGIN + "user/login",
+      process.env.REACT_APP_LOCATIONS_URL_LOGIN,
       user
     );
 
