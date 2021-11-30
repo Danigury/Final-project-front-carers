@@ -1,10 +1,10 @@
-// import { Router } from "react-router";
-// import App from "./App";
+import { Router } from "react-router";
+import App from "./App";
 
-// test("renders learn react link", () => {
-//   <Router>
-//     render(
-//     <App />
-//     );
-//   </Router>;
-// });
+test("renders learn react link", () => {
+  <Router>
+    render(
+    <App />
+    );
+  </Router>;
+});
