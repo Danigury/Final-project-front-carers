@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useLocations from "../hooks/useLocations";
+import Login from "../components/FormLogin/FormLogin";
 
 const Home = () => {
   const { locations, loadLocations } = useLocations();
@@ -7,9 +8,10 @@ const Home = () => {
   useEffect(() => {
     loadLocations();
   }, [loadLocations]);
+
   return (
     <div>
-      <button>Register</button>
+      <Login />
     </div>
   );
 };

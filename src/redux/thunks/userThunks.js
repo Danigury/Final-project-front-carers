@@ -10,7 +10,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
     );
 
     if (response.status === 200) {
-      const token = response.data.user;
+      const token = response.data.token;
       const userLogin = jwtDecode(token);
       dispatch(loginUserAction(userLogin));
       localStorage.setItem("user", JSON.stringify(token));
