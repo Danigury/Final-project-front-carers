@@ -1,3 +1,5 @@
+import "./Button.scss";
+
 const Button = ({ text, className, actionOnClick }) => {
   return (
     <button className={className} onClick={actionOnClick}>
