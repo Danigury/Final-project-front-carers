@@ -23,7 +23,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuth) {
-      navigate("/location");
+      navigate("/locations");
     }
   });
 
