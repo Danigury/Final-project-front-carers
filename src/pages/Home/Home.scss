@@ -1,0 +1,29 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  &__green {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background-color: #065753;
+    border: 0;
+  }
+  &__buttons-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+
+    .text-home {
+      text-align: center;
+    }
+  }
+}

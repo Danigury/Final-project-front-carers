@@ -21,6 +21,6 @@ export const loginUserThunk = (user) => async (dispatch) => {
 };
 
 export const logoutUserThunk = () => (dispatch) => {
-  localStorage.removeIten("user");
+  localStorage.removeItem("user");
   dispatch(logoutUserAction());
 };

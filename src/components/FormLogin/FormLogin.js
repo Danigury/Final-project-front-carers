@@ -29,7 +29,6 @@ const Login = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
     loginUser(dataUser);
   };
 
@@ -40,7 +39,7 @@ const Login = () => {
       autoComplete="off"
       onSubmit={onSubmit}
     >
-      <label htmlFor="username" className="">
+      <label htmlFor="username" className="labels">
         Username
         <input
           placeholder="Username"
@@ -51,7 +50,7 @@ const Login = () => {
           onChange={changeUser}
         />
       </label>
-      <label htmlFor="password" className="">
+      <label htmlFor="password" className="labels">
         Password
         <input
           placeholder="Password"
@@ -62,7 +61,7 @@ const Login = () => {
           className=""
         />
       </label>
-      <button type="submit" className="">
+      <button type="submit" className="button-login">
         Login
       </button>
     </form>
