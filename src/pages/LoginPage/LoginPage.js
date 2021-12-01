@@ -1,9 +1,9 @@
-import Login from "../../components/FormLogin/FormLogin";
+import FormLogin from "../../components/FormLogin/FormLogin";
 
 const LoginPage = () => {
   return (
-    <div>
-      <Login />
+    <div className="login-form-box">
+      <FormLogin />
     </div>
   );
 };
