@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
 import LoginPage from "./LoginPage";
@@ -27,6 +27,9 @@ describe("Given a LoginPage", () => {
           </Router>
         </Provider>
       );
+
+      const expectedLabel = screen.getByLabelText(/Nombre/i);
+      expect(expectedLabel).toBeInTheDocument();
     });
   });
 });
