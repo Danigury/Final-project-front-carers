@@ -4,8 +4,11 @@ import Header from "./components/Header/Header";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import LocationsPage from "./pages/LocationsPage/LocationsPage";
 import "./App.scss";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector(({ user }) => user);
+
   return (
     <Router>
       <Header />
@@ -13,7 +16,11 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/locations" element={<LocationsPage />} />
+        <Route
+          exact
+          path="/locations"
+          element={<LocationsPage user={user} />}
+        />
       </Routes>
     </Router>
   );
