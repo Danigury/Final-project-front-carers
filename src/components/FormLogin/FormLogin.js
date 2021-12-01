@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser";
 
-const Login = () => {
+const FormLogin = () => {
   const initialUser = {
     username: "",
     password: "",
@@ -40,9 +40,9 @@ const Login = () => {
       onSubmit={onSubmit}
     >
       <label htmlFor="username" className="labels">
-        Username
+        Nombre
         <input
-          placeholder="Username"
+          placeholder="Nombre"
           type="text"
           id="username"
           className=""
@@ -51,9 +51,9 @@ const Login = () => {
         />
       </label>
       <label htmlFor="password" className="labels">
-        Password
+        Contraseña
         <input
-          placeholder="Password"
+          placeholder="Contraseña"
           type="password"
           id="password"
           value={dataUser.password}
@@ -62,10 +62,13 @@ const Login = () => {
         />
       </label>
       <button type="submit" className="button-login">
-        Login
+        continúa
+      </button>
+      <button type="submit" className="button-register">
+        regístrate
       </button>
     </form>
   );
 };
 
-export default Login;
+export default FormLogin;
