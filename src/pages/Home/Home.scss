@@ -15,6 +15,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    .button-line {
+      border-style: solid;
+      border-width: 1px;
+    }
   }
 
   &__text {
@@ -24,6 +29,7 @@
 
     .text-home {
       text-align: center;
+      font-size: 20px;
     }
   }
 }
