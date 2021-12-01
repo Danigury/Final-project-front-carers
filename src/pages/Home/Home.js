@@ -1,8 +1,11 @@
 import "./Home.scss";
 import Button from "../../components/Button/Button";
-
+import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const goToLoginPage = () => {};
+  const navigate = useNavigate();
+  const goToLoginPage = () => {
+    navigate("/login");
+  };
 
   return (
     <div className="main-container">
