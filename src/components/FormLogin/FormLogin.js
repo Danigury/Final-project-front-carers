@@ -27,7 +27,7 @@ const FormLogin = () => {
 
   useEffect(() => {
     if (isAuth) {
-      navigate("/locations");
+      navigate("/location");
     }
   });
 
