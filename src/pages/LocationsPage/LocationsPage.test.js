@@ -5,7 +5,6 @@ import { server } from "../../mocks/server";
 import { screen, render, waitFor } from "@testing-library/react";
 import LocationsPage from "./LocationsPage";
 import { BrowserRouter as Router } from "react-router-dom";
-import { LocationsToMock } from "../../mocks/mockDetails";
 
 const store = configureStore();
 
