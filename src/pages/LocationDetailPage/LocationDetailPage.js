@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router";
+
 import LocationDetail from "../../components/LocationDetail/LocationDetail";
 import useLocations from "../../hooks/useLocations";
 
 const LocationDetailPage = ({ user }) => {
   const { loadLocations } = useLocations();
-  const navigate = useNavigate();
 
   useEffect(() => {
     loadLocations();

@@ -20,7 +20,7 @@ const LocationsPage = ({ user }) => {
 
   return (
     <div className="locations-page-box">
-      <h2>localizaciones</h2>
+      <h2 className="locations-page-box__title">localizaciones</h2>
       <LocationsList />
     </div>
   );

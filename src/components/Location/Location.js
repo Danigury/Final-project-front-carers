@@ -5,23 +5,21 @@ import "./Location.scss";
 
 const Location = ({ location, agenda, goToLocationDetails }) => {
   const navigate = useNavigate();
-  const goToLocationDetailPage = () => {};
+  const goToLocationDetailPage = () => {
+    navigate("/location/detail");
+  };
   return (
     <li className="location-ApiBox" onClick={() => {}}>
-      <div className="locationBox__text">
+      <div className="location-ApiBox__text">
         <h2 className="text-name">{location.name}</h2>
         <p className="text-type">{location.type}</p>
-        <div>
-          <Button
-            text="entrar"
-            className="button-noline"
-            actionOnClick={goToLocationDetailPage}
-          />
-          <p className="capacity">
-            Capacidad para {location.capacity} personas
-          </p>
-        </div>
+        <p className="capacity">Capacidad para {location.capacity} personas</p>
       </div>
+      <Button
+        text="detalles"
+        className="button-detalles"
+        actionOnClick={goToLocationDetailPage}
+      />
     </li>
   );
 };

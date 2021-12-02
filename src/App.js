@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/location" element={<LocationsPage user={user} />} />
         <Route
           exact
-          path="/location/detail"
+          path="/location/:id"
           element={<LocationDetailPage user={user} />}
         />
       </Routes>
