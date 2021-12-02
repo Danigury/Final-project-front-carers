@@ -10,7 +10,13 @@ const LocationsList = () => {
     <div className="LocationsListBox">
       <ul className="LocationsList">
         {locations.map((location) => (
-          <Location key={location["_id"]} location={location} />
+          <li
+            key={location["id"]}
+            className="location-ApiBox"
+            onClick={() => {}}
+          >
+            <Location location={location} />
+          </li>
         ))}
       </ul>
     </div>

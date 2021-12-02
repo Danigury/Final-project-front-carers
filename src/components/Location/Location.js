@@ -9,7 +9,7 @@ const Location = ({ location, agenda, goToLocationDetails }) => {
     navigate("/location/detail");
   };
   return (
-    <li className="location-ApiBox" onClick={() => {}}>
+    <>
       <div className="location-ApiBox__text">
         <h2 className="text-name">{location.name}</h2>
         <p className="text-type">{location.type}</p>
@@ -20,7 +20,7 @@ const Location = ({ location, agenda, goToLocationDetails }) => {
         className="button-detalles"
         actionOnClick={goToLocationDetailPage}
       />
-    </li>
+    </>
   );
 };
 
