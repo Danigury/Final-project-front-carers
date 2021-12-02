@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import LocationsPage from "./pages/LocationsPage/LocationsPage";
 import "./App.scss";
 import { useSelector } from "react-redux";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   const user = useSelector(({ user }) => user);
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/register" element={<RegisterPage />} />
         <Route
           exact
           path="/locations"

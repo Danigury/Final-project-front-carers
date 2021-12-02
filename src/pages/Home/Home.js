@@ -6,6 +6,9 @@ const Home = () => {
   const goToLoginPage = () => {
     navigate("/login");
   };
+  const goToRegisterPage = () => {
+    navigate("/register");
+  };
 
   return (
     <div className="main-container">
@@ -19,7 +22,7 @@ const Home = () => {
           <Button
             text="crear cuenta"
             className="button-line"
-            actionOnClick={() => {}}
+            actionOnClick={goToRegisterPage}
           />
         </div>
       </div>

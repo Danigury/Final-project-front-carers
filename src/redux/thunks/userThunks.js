@@ -1,6 +1,10 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loginUserAction, logoutUserAction } from "../actions/actionCreators";
+import {
+  loginUserAction,
+  logoutUserAction,
+  registerUserAction,
+} from "../actions/actionCreators";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
@@ -17,6 +21,17 @@ export const loginUserThunk = (user) => async (dispatch) => {
     }
   } catch {
     new Error("You're not a registered user");
+  }
+};
+
+export const registerUserThunk = (user) => async (dispatch) => {
+  const response = await axios.post(
+    <process className="env REACT_APP_LOCATIONS_URL_REGISTER"></process>,
+    user
+  );
+
+  if (response.status === 200) {
+    dispatch(registerUserAction(response.data));
   }
 };
 
