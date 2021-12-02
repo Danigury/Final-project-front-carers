@@ -14,6 +14,10 @@ const FormLogin = () => {
   const { loginUser } = useUser();
   const navigate = useNavigate();
 
+  const goToRegisterPage = () => {
+    navigate("/register");
+  };
+
   const changeUser = (event) => {
     setDataUser({
       ...dataUser,
@@ -45,7 +49,7 @@ const FormLogin = () => {
           placeholder="Nombre"
           type="text"
           id="username"
-          className=""
+          className="form-login__input"
           value={dataUser.name}
           onChange={changeUser}
         />
@@ -58,13 +62,13 @@ const FormLogin = () => {
           id="password"
           value={dataUser.password}
           onChange={changeUser}
-          className=""
+          className="form-login__input"
         />
       </label>
       <button type="submit" className="button-login">
         continúa
       </button>
-      <button type="submit" className="button-register">
+      <button className="button-register" onClick={goToRegisterPage}>
         regístrate
       </button>
     </form>
