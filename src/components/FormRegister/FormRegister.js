@@ -23,6 +23,7 @@ const FormRegister = () => {
     registerUser(dataUser);
     if (isAuth) {
       setFeedBack(true);
+      navigate("/locations");
     }
   };
 
@@ -35,7 +36,6 @@ const FormRegister = () => {
 
   useEffect(() => {
     if (isAuth) {
-      navigate("/locations");
     }
   });
 
