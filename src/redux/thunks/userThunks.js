@@ -26,7 +26,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
 
 export const registerUserThunk = (user) => async (dispatch) => {
   const response = await axios.post(
-    <process className="env REACT_APP_LOCATIONS_URL_REGISTER"></process>,
+    process.env.REACT_APP_LOCATIONS_URL_REGISTER,
     user
   );
 

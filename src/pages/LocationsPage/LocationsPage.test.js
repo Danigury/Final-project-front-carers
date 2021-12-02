@@ -33,7 +33,7 @@ describe("Given a LocationsPage page", () => {
           </Router>
         </Provider>
       );
-      const locationA = await screen.findByText("Localizaciones");
+      const locationA = await screen.findByText("localizaciones");
       const locationB = await screen.findByRole("list");
 
       await waitFor(() => {

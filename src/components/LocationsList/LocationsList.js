@@ -1,6 +1,7 @@
 import Proptypes from "prop-types";
 import useLocations from "../../hooks/useLocations";
 import Location from "../Location/Location";
+import "./LocationsList.scss";
 
 const LocationsList = () => {
   const { locations } = useLocations();

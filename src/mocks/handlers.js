@@ -17,7 +17,7 @@ export const handlers = [
     }
   ),
   rest.get(
-    "https://proyecto-final-dani-back.herokuapp.com/locations",
+    "https://proyecto-final-dani-back.herokuapp.com/location",
     async (req, res, ctx) => {
       const respons = res(ctx.json(LocationsToMock));
       return respons;
