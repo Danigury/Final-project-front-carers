@@ -8,11 +8,11 @@ const LocationsPage = ({ user }) => {
   const { loadLocations } = useLocations();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!user.isAuthenticated) {
-  //     navigate("/");
-  //   }
-  // });
+  useEffect(() => {
+    if (!user.isAuthenticated) {
+      navigate("/");
+    }
+  });
 
   useEffect(() => {
     loadLocations();
