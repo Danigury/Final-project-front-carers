@@ -9,7 +9,7 @@ const Location = ({ location, agenda, goToLocationDetails }) => {
         <p className="text-address">{location.address.street}</p>
         <p className="text-address__postcode">{location.address.postcode}</p>
         <p className="text-phonenumber">{location.phonenumber}</p>
-        <p className="capacity">{location.capacity}</p>
+        <p className="capacity">Capacidad para {location.capacity} personas</p>
       </div>
     </li>
   );
@@ -23,7 +23,7 @@ Location.propTypes = {
       street: PropTypes.string.isRequired,
       postcode: PropTypes.string.isRequired,
     }),
-    phonenumber: PropTypes.number.isRequired,
+    phonenumber: PropTypes.string.isRequired,
     capacity: PropTypes.number.isRequired,
   }).isRequired,
 };
