@@ -10,6 +10,11 @@ export const loadCurrentLocationAction = (location) => ({
   location,
 });
 
+export const createNewLocationAction = (location) => ({
+  type: actionTypes.createNewLocation,
+  location,
+});
+
 export const registerUserAction = (user) => ({
   type: actionTypes.registerUser,
   user,
