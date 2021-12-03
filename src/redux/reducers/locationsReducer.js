@@ -6,9 +6,11 @@ const locationsReducer = (locations = [], action) => {
     case actionTypes.loadLocations:
       newLocations = [...action.locations];
       break;
+
     default:
       newLocations = locations;
   }
+
   return newLocations;
 };
 

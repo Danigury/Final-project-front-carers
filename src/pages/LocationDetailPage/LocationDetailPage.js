@@ -1,18 +1,16 @@
-import { useEffect } from "react";
-
+import { useParams } from "react-router";
 import LocationDetail from "../../components/LocationDetail/LocationDetail";
 import useLocations from "../../hooks/useLocations";
 
-const LocationDetailPage = ({ user }) => {
-  const { loadLocations } = useLocations();
+const LocationDetailPage = () => {
+  const { loadCurrentLocation, setLoadCurrentLocation } = useLocations();
+  const { id } = useParams();
 
-  useEffect(() => {
-    loadLocations();
-  }, [loadLocations]);
+  setLoadCurrentLocation(id);
 
   return (
     <div className="location-detail-box">
-      <LocationDetail />
+      <LocationDetail location={loadCurrentLocation} />
     </div>
   );
 };
