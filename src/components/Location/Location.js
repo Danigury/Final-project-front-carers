@@ -26,7 +26,7 @@ const Location = ({ location, agenda }) => {
       <Button
         text="detalles"
         className="button-detalles"
-        actionOnClick={() => {}}
+        actionOnClick={() => goToLocationDetailsPage(location.id)}
       />
     </>
   );
