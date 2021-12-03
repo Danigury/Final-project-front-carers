@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   loadCurrentLocationThunk,
   loadLocationsThunk,
+  createNewLocationThunk,
 } from "../redux/thunks/locationsThunks";
 
 const useLocations = () => {
@@ -21,7 +22,17 @@ const useLocations = () => {
     [dispatch]
   );
 
-  return { locations, location, loadLocations, loadCurrentLocation };
+  const createNewLocation = (location) => {
+    dispatch(createNewLocationThunk(location));
+  };
+
+  return {
+    locations,
+    location,
+    loadLocations,
+    loadCurrentLocation,
+    createNewLocation,
+  };
 };
 
 export default useLocations;

@@ -3,14 +3,13 @@ import LocationDetail from "../../components/LocationDetail/LocationDetail";
 import useLocations from "../../hooks/useLocations";
 
 const LocationDetailPage = () => {
-  const { loadCurrentLocation, setLoadCurrentLocation } = useLocations();
+  const { locations } = useLocations();
   const { id } = useParams();
-
-  setLoadCurrentLocation(id);
+  const locationFiletered = locations?.filter((e) => e.id === id);
 
   return (
     <div className="location-detail-box">
-      <LocationDetail location={loadCurrentLocation} />
+      <LocationDetail location={locationFiletered[0]} />
     </div>
   );
 };

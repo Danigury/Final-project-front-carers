@@ -15,10 +15,7 @@ const Location = ({ location, agenda }) => {
 
   return (
     <>
-      <div
-        className="location-ApiBox__text"
-        onClick={() => goToLocationDetailsPage(location.id)}
-      >
+      <div className="location-ApiBox__text">
         <h2 className="text-name">{location.name}</h2>
         <p className="text-type">{location.type}</p>
         <p className="capacity">Capacidad para {location.capacity} personas</p>
@@ -26,7 +23,7 @@ const Location = ({ location, agenda }) => {
       <Button
         text="detalles"
         className="button-detalles"
-        actionOnClick={() => {}}
+        actionOnClick={() => goToLocationDetailsPage(location.id)}
       />
     </>
   );
