@@ -1,5 +1,8 @@
 import axios from "axios";
-import { loadLocationsAction } from "../actions/actionCreators";
+import {
+  loadCurrentLocationAction,
+  loadLocationsAction,
+} from "../actions/actionCreators";
 
 const urlApi = process.env.REACT_APP_URL_API;
 export const loadLocationsThunk = () => {
@@ -13,5 +16,17 @@ export const loadLocationsThunk = () => {
       });
       dispatch(loadLocationsAction(locations));
     } catch {}
+  };
+};
+export const loadCurrentLocationThunk = (id) => {
+  return async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    const { data } = await axios.get(`${urlApi}/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    dispatch(loadCurrentLocationAction(data));
   };
 };
