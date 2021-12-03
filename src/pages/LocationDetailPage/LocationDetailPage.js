@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import LocationDetail from "../../components/LocationDetail/LocationDetail";
 import useLocations from "../../hooks/useLocations";

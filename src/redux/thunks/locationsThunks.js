@@ -18,6 +18,7 @@ export const loadLocationsThunk = () => {
     } catch {}
   };
 };
+
 export const loadCurrentLocationThunk = (id) => {
   return async (dispatch) => {
     const token = JSON.parse(localStorage.getItem("user"));
@@ -28,5 +29,20 @@ export const loadCurrentLocationThunk = (id) => {
     });
 
     dispatch(loadCurrentLocationAction(data));
+  };
+};
+
+export const createNewLocationThunk = (location) => {
+  return async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    const { data } = await axios.post(`${urlApi}/create`, location, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (data === 200) {
+      dispatch(createNewLocationThunk(data));
+    }
   };
 };

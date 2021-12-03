@@ -17,6 +17,10 @@ const userReducer = (
       };
       break;
 
+    case actionTypes.registerUser:
+      newUser = { user: action.user, isAuthenticated: false };
+      break;
+
     case actionTypes.logoutUser:
       newUser = {
         ...user,
