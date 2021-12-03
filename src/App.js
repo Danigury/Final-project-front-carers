@@ -7,6 +7,7 @@ import "./App.scss";
 import { useSelector } from "react-redux";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LocationDetailPage from "./pages/LocationDetailPage/LocationDetailPage";
+import CreatePage from "./pages/CreatePage/CreatePage";
 
 function App() {
   const user = useSelector(({ user }) => user);
@@ -24,6 +25,11 @@ function App() {
           exact
           path="/location/:id"
           element={<LocationDetailPage user={user} />}
+        />
+        <Route
+          exact
+          path="/location/create"
+          element={<CreatePage user={user} />}
         />
       </Routes>
     </Router>
