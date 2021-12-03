@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import "./LocationDetail.scss";
 
 const LocationDetail = ({ location, agenda }) => {
