@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router";
 import Button from "../Button/Button";
 import "./LocationDetail.scss";
 
 const LocationDetail = ({ location, agenda }) => {
+  const navigate = useNavigate();
+  const goToLocationsPage = () => {
+    navigate(`/location/`);
+  };
   return (
     <div className="locationBox-detail">
       <div className="locationBox-detail__text">
@@ -13,9 +18,9 @@ const LocationDetail = ({ location, agenda }) => {
         <p className="capacity">Capacidad para {location.capacity} personas</p>
       </div>
       <Button
-        text="volver"
+        text="+ localizaciones"
         className="button-volver"
-        actionOnClick={() => {}}
+        actionOnClick={() => goToLocationsPage()}
       />
       <Button
         text="modificar localización"
