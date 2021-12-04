@@ -12,19 +12,34 @@ const Header = () => {
           <span></span>
           <ul className="menu">
             <li>
+              <Link className="menu__item" to="#">
+                agenda
+              </Link>
+            </li>
+            <li>
+              <Link className="menu__item" to="#">
+                mujer
+              </Link>
+            </li>
+            <li>
               <Link className="menu__item" to="/location">
                 localizaciones
               </Link>
             </li>
             <li>
-              <Link className="menu__item" to="registro">
-                Registro
+              <Link className="menu__item" to="location/create">
+                crear localización
+              </Link>
+            </li>
+            <li>
+              <Link className="menu__item" to="#">
+                información práctica
               </Link>
             </li>
 
             <li>
-              <Link className="menu__item" to="registro">
-                Registro
+              <Link className="menu__item" to="#">
+                cerrar sesión
               </Link>
             </li>
           </ul>

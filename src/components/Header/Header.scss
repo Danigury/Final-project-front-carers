@@ -33,38 +33,10 @@
         opacity: 0.5;
       }
     }
+
     ul {
       padding: 0;
       list-style-type: none;
-    }
-
-    .container {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .phone {
-      background-color: #36383f;
-      border-radius: 40px;
-      width: 300px;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 30px 50px 100px #85888c;
-    }
-    .content {
-      border: 1px solid #36383f;
-      border-radius: 20px;
-      width: 94%;
-      height: 91%;
-      background-color: #f5f6fa;
-      overflow: hidden;
-    }
-    nav {
-      background-color: #1e1e23;
-      height: 65px;
     }
 
     .menuToggle {
@@ -73,7 +45,6 @@
       position: relative;
       top: 5px;
       left: -25%;
-
       z-index: 1;
       -webkit-user-select: none;
       user-select: none;
@@ -95,7 +66,6 @@
       height: 2px;
       margin-bottom: 5px;
       position: relative;
-
       background: #ffffff;
       border-radius: 3px;
       z-index: 1;
@@ -104,6 +74,9 @@
         background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
     }
 
+    .menuToggle input:checked ~ ul {
+      transform: none;
+    }
     .menuToggle span:first-child {
       transform-origin: 0% 0%;
     }
@@ -144,10 +117,6 @@
     .menu li {
       padding: 10px 0;
       transition-delay: 2s;
-    }
-
-    .menuToggle input:checked ~ ul {
-      transform: none;
     }
   }
 }
