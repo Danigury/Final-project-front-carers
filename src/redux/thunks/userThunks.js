@@ -19,9 +19,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
       dispatch(loginUserAction(userLogin));
       localStorage.setItem("user", JSON.stringify(token));
     }
-  } catch {
-    new Error("You're not a registered user");
-  }
+  } catch {}
 };
 
 export const registerUserThunk = (user) => async (dispatch) => {
