@@ -38,11 +38,13 @@ const FormRegister = () => {
   return (
     <>
       {feedback === true ? (
-        <p className="title">
+        <h2 className="login__title">
           Bienvenida/o a carers. ya puedes utilizar la aplicación
-        </p>
+        </h2>
       ) : (
-        <p className="title">Para utilizar carers. debes estar registrada/o.</p>
+        <h2 className="login__title">
+          Para utilizar carers. debes estar registrada/o.
+        </h2>
       )}
 
       <form

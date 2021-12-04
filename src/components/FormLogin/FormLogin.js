@@ -37,41 +37,44 @@ const FormLogin = () => {
   };
 
   return (
-    <form
-      className="form-login"
-      noValidate
-      autoComplete="off"
-      onSubmit={onSubmit}
-    >
-      <label htmlFor="username" className="labels">
-        Nombre
-        <input
-          placeholder="Nombre"
-          type="text"
-          id="username"
-          className="form-login__input"
-          value={dataUser.name}
-          onChange={changeUser}
-        />
-      </label>
-      <label htmlFor="password" className="labels">
-        Contraseña
-        <input
-          placeholder="Contraseña"
-          type="password"
-          id="password"
-          value={dataUser.password}
-          onChange={changeUser}
-          className="form-login__input"
-        />
-      </label>
-      <button type="submit" className="button-login">
-        continúa
-      </button>
-      <button className="button-register" onClick={goToRegisterPage}>
-        regístrate
-      </button>
-    </form>
+    <>
+      <h2 className="login__title">inicia sesión</h2>
+      <form
+        className="form-login"
+        noValidate
+        autoComplete="off"
+        onSubmit={onSubmit}
+      >
+        <label htmlFor="username" className="labels">
+          Nombre
+          <input
+            placeholder="Nombre"
+            type="text"
+            id="username"
+            className="form-login__input"
+            value={dataUser.name}
+            onChange={changeUser}
+          />
+        </label>
+        <label htmlFor="password" className="labels">
+          Contraseña
+          <input
+            placeholder="Contraseña"
+            type="password"
+            id="password"
+            value={dataUser.password}
+            onChange={changeUser}
+            className="form-login__input"
+          />
+        </label>
+        <button type="submit" className="button-login">
+          continúa
+        </button>
+        <button className="button-register" onClick={goToRegisterPage}>
+          regístrate
+        </button>
+      </form>
+    </>
   );
 };
 
