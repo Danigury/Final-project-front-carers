@@ -27,5 +27,4 @@ export const loginUserAction = (user) => ({
 
 export const logoutUserAction = () => ({
   type: actionTypes.logoutUser,
-  user: {},
 });

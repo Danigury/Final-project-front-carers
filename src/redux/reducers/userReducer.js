@@ -23,7 +23,7 @@ const userReducer = (
 
     case actionTypes.logoutUser:
       newUser = {
-        ...user,
+        user: {},
         isAuthenticated: false,
       };
       break;
