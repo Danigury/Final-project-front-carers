@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
+import useUser from "../../hooks/useUser";
+import { useNavigate } from "react-router";
 import "./Header.scss";
 
 const Header = () => {
+  const { logoutUser } = useUser();
+  const navigate = useNavigate();
+  const logout = async (event) => {
+    event.preventDefault();
+    logoutUser();
+    navigate("/");
+  };
   return (
     <div className="header-container">
       <header className="header">
@@ -38,7 +47,7 @@ const Header = () => {
             </li>
 
             <li>
-              <Link className="menu__item" to="#">
+              <Link className="menu__item" to="#" onClick={logout}>
                 cerrar sesión
               </Link>
             </li>
