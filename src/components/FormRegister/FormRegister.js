@@ -1,5 +1,5 @@
 import "./FormRegister.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -34,11 +34,6 @@ const FormRegister = () => {
       [event.target.id]: event.target.value,
     });
   };
-
-  useEffect(() => {
-    if (isAuth) {
-    }
-  });
 
   return (
     <>
