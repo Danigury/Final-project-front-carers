@@ -35,11 +35,6 @@ const FormRegister = () => {
     });
   };
 
-  useEffect(() => {
-    if (isAuth) {
-    }
-  });
-
   return (
     <>
       {feedback === true ? (
