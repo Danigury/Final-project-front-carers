@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import useLocations from "../../hooks/useLocations";
 import Button from "../Button/Button";
 import "./LocationDetail.scss";
 
@@ -6,6 +7,12 @@ const LocationDetail = ({ location, agenda }) => {
   const navigate = useNavigate();
   const goToLocationsPage = () => {
     navigate(`/location/`);
+  };
+  const { loadCurrentLocation } = useLocations();
+
+  const goToUpdatePage = (id) => {
+    loadCurrentLocation(id);
+    navigate(`/location/update/${id}`);
   };
   return (
     <div className="locationBox-detail">
@@ -25,7 +32,7 @@ const LocationDetail = ({ location, agenda }) => {
       <Button
         text="modificar localización"
         className="button-modificar"
-        actionOnClick={() => {}}
+        actionOnClick={() => goToUpdatePage(location.id)}
       />
     </div>
   );

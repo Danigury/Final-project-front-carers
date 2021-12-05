@@ -28,3 +28,9 @@ export const loginUserAction = (user) => ({
 export const logoutUserAction = () => ({
   type: actionTypes.logoutUser,
 });
+
+export const updateLocationAction = (id, location) => ({
+  type: actionTypes.updateLocation,
+  id,
+  location,
+});

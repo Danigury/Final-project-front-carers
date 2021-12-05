@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   loadCurrentLocationAction,
   loadLocationsAction,
+  updateLocationAction,
 } from "../actions/actionCreators";
 
 const urlApi = process.env.REACT_APP_URL_API;
@@ -43,6 +44,21 @@ export const createNewLocationThunk = (location) => {
 
     if (data === 200) {
       dispatch(createNewLocationThunk(data));
+    }
+  };
+};
+
+export const updateLocationThunk = (location, id) => {
+  return async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    const { data } = await axios.put(`${urlApi}/${id}`, location, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (data.status === 200) {
+      dispatch(updateLocationAction(data));
     }
   };
 };

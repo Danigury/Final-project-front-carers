@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LocationDetailPage from "./pages/LocationDetailPage/LocationDetailPage";
 import CreatePage from "./pages/CreatePage/CreatePage";
+import UpdatePage from "./pages/UpdatePage/UpdatePage";
 
 function App() {
   const user = useSelector(({ user }) => user);
@@ -30,6 +31,11 @@ function App() {
           exact
           path="/location/create"
           element={<CreatePage user={user} />}
+        />
+        <Route
+          exact
+          path="/location/update/:id"
+          element={<UpdatePage user={user} />}
         />
       </Routes>
     </Router>

@@ -4,6 +4,7 @@ import {
   loadCurrentLocationThunk,
   loadLocationsThunk,
   createNewLocationThunk,
+  updateLocationThunk,
 } from "../redux/thunks/locationsThunks";
 
 const useLocations = () => {
@@ -26,12 +27,17 @@ const useLocations = () => {
     dispatch(createNewLocationThunk(location));
   };
 
+  const updateLocation = (location, id) => {
+    dispatch(updateLocationThunk(location, id));
+  };
+
   return {
     locations,
     location,
     loadLocations,
     loadCurrentLocation,
     createNewLocation,
+    updateLocation,
   };
 };
 
