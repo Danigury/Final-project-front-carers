@@ -50,7 +50,6 @@ const FormUpdate = () => {
   };
 
   const [dataLocation, setDataLocation] = useState(initialDataLocation);
-  console.log(dataLocation);
   const changeLocation = (event) => {
     setDataLocation({
       ...dataLocation,
@@ -124,19 +123,18 @@ const FormUpdate = () => {
           autoComplete="off"
           onSubmit={editLocation}
         >
-          <label htmlFor="type" className="labels">
-            Intoduce el tipo de localización
-            <input
-              type="text"
-              id="type"
-              name="type"
-              value={dataLocation.type}
-              placeholder="Comedor social"
-              className="form-register__input"
-              required
-              onChange={changeLocation}
-            ></input>
-          </label>
+          <select
+            className="form-register__list"
+            id="type"
+            name="type"
+            onChange={changeLocation}
+          >
+            <option>Escoge el tipo de localización</option>
+            <option value="Albergue social">Albergue social</option>
+            <option value="Centro de día">Centro de día</option>
+            <option value="Comedor social">Comedor social</option>
+            <option value="Higiene y salud">Higiene y salud</option>
+          </select>
 
           <label htmlFor="name" className="labels">
             Introduce el nombre de la localización

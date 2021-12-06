@@ -8,8 +8,12 @@ const LocationDetail = ({ location, agenda }) => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
-  const { loadCurrentLocation } = useLocations();
 
+  const { loadCurrentLocation, deleteLocation } = useLocations();
+  const onDeleteLocation = (id, location) => {
+    deleteLocation(id, location);
+    navigate("/location");
+  };
   const goToUpdatePage = (id) => {
     loadCurrentLocation(id);
     navigate(`/location/update/${id}`);
@@ -23,16 +27,36 @@ const LocationDetail = ({ location, agenda }) => {
         <p className="text-address__postcode">{location.address.postcode}</p>
         <p className="text-phonenumber">{location.phonenumber}</p>
         <p className="capacity">Capacidad para {location.capacity} personas</p>
+        {/* <MapContainer
+          center={[51.505, -0.09]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer> */}
+        <Button
+          text="modificar localización"
+          className="button-modificar"
+          actionOnClick={() => goToUpdatePage(location.id)}
+        />
+        <Button
+          text="eliminar localización"
+          className="button-eliminar"
+          actionOnClick={() => onDeleteLocation(location.id)}
+        />
       </div>
       <Button
         text="+ localizaciones"
         className="button-volver"
         actionOnClick={() => goToLocationsPage()}
-      />
-      <Button
-        text="modificar localización"
-        className="button-modificar"
-        actionOnClick={() => goToUpdatePage(location.id)}
       />
     </div>
   );

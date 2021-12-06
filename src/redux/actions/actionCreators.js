@@ -34,3 +34,8 @@ export const updateLocationAction = (id, location) => ({
   id,
   location,
 });
+
+export const deleteLocationAction = (id) => ({
+  type: actionTypes.deleteLocation,
+  id,
+});

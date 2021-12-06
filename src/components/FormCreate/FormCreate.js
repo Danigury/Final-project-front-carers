@@ -124,18 +124,18 @@ const FormCreate = () => {
           autoComplete="off"
           onSubmit={onSubmit}
         >
-          <label htmlFor="type" className="labels">
-            Introduce el nombre de la localización
-            <input
-              type="text"
-              id="type"
-              name="type"
-              placeholder="Comedor social"
-              className="form-register__input"
-              required
-              onChange={changeLocation}
-            ></input>
-          </label>
+          <select
+            className="form-register__list"
+            id="type"
+            name="type"
+            onChange={changeLocation}
+          >
+            <option>Escoge el tipo de localización</option>
+            <option value="Albergue social">Albergue social</option>
+            <option value="Centro de día">Centro de día</option>
+            <option value="Comedor social">Comedor social</option>
+            <option value="Higiene y salud">Higiene y salud</option>
+          </select>
 
           <label htmlFor="name" className="labels">
             Introduce el nombre de la localización
