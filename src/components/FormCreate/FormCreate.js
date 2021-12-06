@@ -154,7 +154,7 @@ const FormCreate = () => {
             </select>
 
             <label htmlFor="name" className="labels">
-              Introduce el nombre de la localización
+              Nombre de la localización
             </label>
             <input
               type="text"
@@ -191,7 +191,7 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
             <label htmlFor="longitude" className="labels">
-              Coordenadas - Introduce la longitud
+              Introduce la longitud
             </label>
             <input
               type="number"
@@ -203,7 +203,7 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
             <label htmlFor="latitude" className="labels">
-              Coordenadas - Introduce la latitud
+              Introduce la latitud
             </label>
             <input
               type="number"
