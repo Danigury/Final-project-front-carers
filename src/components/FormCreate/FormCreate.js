@@ -131,7 +131,7 @@ const FormCreate = () => {
   };
   return (
     <>
-      <div className="form-container">
+      <div className="form-container__location">
         <h2 className="title">crear localización</h2>
         <div>
           <form
@@ -154,7 +154,7 @@ const FormCreate = () => {
             </select>
 
             <label htmlFor="name" className="labels">
-              Introduce el nombre de la localización
+              Nombre de la localización
             </label>
             <input
               type="text"
@@ -191,7 +191,7 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
             <label htmlFor="longitude" className="labels">
-              Coordenadas - Introduce la longitud
+              Introduce la longitud
             </label>
             <input
               type="number"
@@ -203,7 +203,7 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
             <label htmlFor="latitude" className="labels">
-              Coordenadas - Introduce la latitud
+              Introduce la latitud
             </label>
             <input
               type="number"
@@ -238,22 +238,21 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-            <div className="buttonbox">
-              <button
-                type="submit"
-                className="button-volver"
-                disabled={disableButton}
-              >
-                crear
-              </button>
-              <Button
-                text="+ localizaciones"
-                className="button-volver"
-                actionOnClick={() => goToLocationsPage()}
-              />
-            </div>
+
+            <button
+              type="submit"
+              className="button-create"
+              disabled={disableButton}
+            >
+              crear
+            </button>
           </form>
         </div>
+        <Button
+          text="+ localizaciones"
+          className="button-volver"
+          actionOnClick={() => goToLocationsPage()}
+        />
         <div>
           <p className="register-message">
             {feedback === true ? "Localización añadida a la base de datos" : ""}

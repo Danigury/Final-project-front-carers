@@ -40,12 +40,12 @@ const LocationDetail = ({ location, agenda }) => {
         ></iframe>
         <div className="locationBox-detail__buttons">
           <Button
-            text="modificar localización"
+            text="modificar"
             className="button button-modificar"
             actionOnClick={() => goToUpdatePage(location.id)}
           />
           <Button
-            text="eliminar localización"
+            text="eliminar"
             className="button button-eliminar"
             actionOnClick={() => onDeleteLocation(location.id)}
           />
