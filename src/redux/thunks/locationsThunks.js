@@ -45,7 +45,7 @@ export const createNewLocationThunk = (location) => {
       },
     });
 
-    if (data === 200) {
+    if (data.status === 200) {
       toast.success("Nueva localización creada!");
       dispatch(createNewLocationThunk(data));
     }

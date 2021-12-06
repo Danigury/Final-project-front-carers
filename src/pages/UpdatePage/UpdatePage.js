@@ -1,5 +1,4 @@
 import FormUpdate from "../../components/FormUpdate/FormUpdate";
-// import "./CreatePage.scss";
 
 const UpdatePage = () => {
   return (
