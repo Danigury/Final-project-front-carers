@@ -5,7 +5,7 @@ import configureStore from "../../redux/store/index";
 import FormLogin from "./FormLogin";
 const store = configureStore();
 
-describe("Give a FormLogin component", () => {
+describe("Given a FormLogin component", () => {
   describe("When it's rendered", () => {
     test("Then it should render the inputs and button", () => {
       render(

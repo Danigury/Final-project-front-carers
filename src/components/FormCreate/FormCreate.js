@@ -166,7 +166,7 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
 
-            <label htmlFor="address.street" className="labels">
+            <label htmlFor="street" className="labels">
               Introduce la dirección
             </label>
             <input
