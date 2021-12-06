@@ -1,7 +1,6 @@
 import "./FormRegister.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 const FormRegister = () => {
@@ -14,18 +13,13 @@ const FormRegister = () => {
 
   const [dataUser, setDataUser] = useState(initialDataUser);
 
-  const isAuth = useSelector(({ user }) => user.isAuthenticated);
   const navigate = useNavigate();
   const { registerUser } = useUser();
-  const [feedback, setFeedBack] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     registerUser(dataUser);
     navigate("/login");
-    if (isAuth) {
-      setFeedBack(true);
-    }
   };
 
   const changeUser = (event) => {
@@ -37,24 +31,19 @@ const FormRegister = () => {
 
   return (
     <>
-      {feedback === true ? (
-        <h2 className="login__title">
-          Bienvenida/o a carers. ya puedes utilizar la aplicación
-        </h2>
-      ) : (
-        <h2 className="login__title">
+      <div className="form-container">
+        <h2 className="register__title">
           Para utilizar carers. debes estar registrada/o.
         </h2>
-      )}
-
-      <form
-        className="form-register"
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <label htmlFor="username" className="labels">
-          Introduce tu nombre
+        <form
+          className="form-register"
+          noValidate
+          autoComplete="off"
+          onSubmit={onSubmit}
+        >
+          <label htmlFor="username" className="labels">
+            Introduce tu nombre
+          </label>
           <input
             type="text"
             id="username"
@@ -64,10 +53,9 @@ const FormRegister = () => {
             required
             onChange={changeUser}
           ></input>
-        </label>
-
-        <label htmlFor="password" className="labels">
-          Introduce una contraseña
+          <label htmlFor="password" className="labels">
+            Introduce una contraseña
+          </label>
           <input
             type="password"
             id="password"
@@ -77,11 +65,11 @@ const FormRegister = () => {
             required
             onChange={changeUser}
           ></input>
-        </label>
-        <button type="submit" className="button-login">
-          continúa
-        </button>
-      </form>
+          <button type="submit" className="button-login">
+            continúa
+          </button>
+        </form>
+      </div>
     </>
   );
 };

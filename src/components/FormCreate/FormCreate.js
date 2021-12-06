@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import useLocations from "../../hooks/useLocations";
 import Button from "../Button/Button";
+import "./FormCreate.scss";
 
 const FormCreate = () => {
   const initialDataLocation = {
@@ -130,29 +131,31 @@ const FormCreate = () => {
   };
   return (
     <>
-      <h2 className="title">añadir</h2>
-      <div>
-        <form
-          className="form-create"
-          noValidate
-          autoComplete="off"
-          onSubmit={onSubmit}
-        >
-          <select
-            className="form-register__list"
-            id="type"
-            name="type"
-            onChange={changeLocation}
+      <div className="form-container">
+        <h2 className="title">crear localización</h2>
+        <div>
+          <form
+            className="form-create"
+            noValidate
+            autoComplete="off"
+            onSubmit={onSubmit}
           >
-            <option>Escoge el tipo de localización</option>
-            <option value="Albergue social">Albergue social</option>
-            <option value="Centro de día">Centro de día</option>
-            <option value="Comedor social">Comedor social</option>
-            <option value="Higiene y salud">Higiene y salud</option>
-          </select>
+            <select
+              className="form-register__list"
+              id="type"
+              name="type"
+              onChange={changeLocation}
+            >
+              <option>Escoge el tipo de localización</option>
+              <option value="Albergue social">Albergue social</option>
+              <option value="Centro de día">Centro de día</option>
+              <option value="Comedor social">Comedor social</option>
+              <option value="Higiene y salud">Higiene y salud</option>
+            </select>
 
-          <label htmlFor="name" className="labels">
-            Introduce el nombre de la localización
+            <label htmlFor="name" className="labels">
+              Introduce el nombre de la localización
+            </label>
             <input
               type="text"
               id="name"
@@ -162,10 +165,10 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
 
-          <label htmlFor="address.street" className="labels">
-            Introduce la dirección
+            <label htmlFor="address.street" className="labels">
+              Introduce la dirección
+            </label>
             <input
               type="text"
               id="street"
@@ -175,9 +178,9 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <label htmlFor="postcode" className="labels">
-            Introduce el código postal
+            <label htmlFor="postcode" className="labels">
+              Introduce el código postal
+            </label>
             <input
               type="text"
               id="postcode"
@@ -187,9 +190,9 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <label htmlFor="longitude" className="labels">
-            Coordenadas - Introduce la longitud
+            <label htmlFor="longitude" className="labels">
+              Coordenadas - Introduce la longitud
+            </label>
             <input
               type="number"
               id="longitude"
@@ -199,9 +202,9 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <label htmlFor="latitude" className="labels">
-            Coordenadas - Introduce la latitud
+            <label htmlFor="latitude" className="labels">
+              Coordenadas - Introduce la latitud
+            </label>
             <input
               type="number"
               id="latitude"
@@ -211,9 +214,9 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <label htmlFor="phonenumber" className="labels">
-            Teléfono de contacto
+            <label htmlFor="phonenumber" className="labels">
+              Teléfono de contacto
+            </label>
             <input
               type="text"
               id="phonenumber"
@@ -223,9 +226,9 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <label htmlFor="capacity" className="labels">
-            Introduce el aforo disponible
+            <label htmlFor="capacity" className="labels">
+              Introduce el aforo disponible
+            </label>
             <input
               type="number"
               id="capacity"
@@ -235,25 +238,27 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-          </label>
-          <button
-            type="submit"
-            className="button-login"
-            disabled={disableButton}
-          >
-            crear
-          </button>
-        </form>
-      </div>
-      <div>
-        <Button
-          text="+ localizaciones"
-          className="button-volver"
-          actionOnClick={() => goToLocationsPage()}
-        />
-        <p className="register-message">
-          {feedback === true ? "Localización añadida a la base de datos" : ""}
-        </p>
+            <div className="buttonbox">
+              <button
+                type="submit"
+                className="button-volver"
+                disabled={disableButton}
+              >
+                crear
+              </button>
+              <Button
+                text="+ localizaciones"
+                className="button-volver"
+                actionOnClick={() => goToLocationsPage()}
+              />
+            </div>
+          </form>
+        </div>
+        <div>
+          <p className="register-message">
+            {feedback === true ? "Localización añadida a la base de datos" : ""}
+          </p>
+        </div>
       </div>
     </>
   );

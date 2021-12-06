@@ -8,7 +8,6 @@ const LocationDetail = ({ location, agenda }) => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
-
   const { loadCurrentLocation, deleteLocation } = useLocations();
   const onDeleteLocation = (id, location) => {
     deleteLocation(id, location);
@@ -24,9 +23,9 @@ const LocationDetail = ({ location, agenda }) => {
       <div className="locationBox-detail__text">
         <h2 className="text-name">{location.name}</h2>
         <p className="text text-type">{location.type}</p>
-        <p className="text text-address">{location.address.street}</p>
+        <p className="text text-address">{location.address?.street}</p>
         <p className="text text-address__postcode">
-          {location.address.postcode}
+          {location.address?.postcode}
         </p>
         <p className="text text-phonenumber">{location.phonenumber}</p>
         <p className="text text-capacity">
@@ -37,7 +36,7 @@ const LocationDetail = ({ location, agenda }) => {
           title="map"
           width="300"
           height="250"
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address.coordinates.longitude}%2C${location.address.coordinates.latitude}&amp;layer=mapnik`}
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address?.coordinates?.longitude}%2C${location.address?.coordinates?.latitude}&amp;layer=mapnik`}
         ></iframe>
         <div className="locationBox-detail__buttons">
           <Button

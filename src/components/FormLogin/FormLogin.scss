@@ -1,3 +1,39 @@
-.labels {
-  background-color: white;
+.form-container__login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.login__title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+.form-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  text-align: left;
+}
+
+.label-login {
+  font-size: 18px;
+  margin: 6px;
+}
+
+.form-login__input {
+  font-size: 18px;
+  border: 1px solid #065753a6;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.button-continuar {
+  background: none;
+  color: #065753;
+  border: solid 1px;
 }
