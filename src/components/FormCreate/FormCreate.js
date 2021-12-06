@@ -47,7 +47,6 @@ const FormCreate = () => {
   };
 
   const [dataLocation, setDataLocation] = useState(initialDataLocation);
-
   const newDataLocation = {
     name: dataLocation.name,
     woman: false,
@@ -93,7 +92,21 @@ const FormCreate = () => {
       },
     ],
   };
-
+  const [disableButton, setDisableButton] = useState(true);
+  const checkForm = () => {
+    if (
+      dataLocation.name !== "" &&
+      dataLocation.type !== "" &&
+      dataLocation.street !== "" &&
+      dataLocation.postcode !== "" &&
+      dataLocation.longitude !== 0 &&
+      dataLocation.latitude !== 0 &&
+      dataLocation.phonenumber !== "" &&
+      dataLocation.capacity !== 0
+    ) {
+      setDisableButton(false);
+    }
+  };
   const { createNewLocation } = useLocations();
   const [feedback, setFeedback] = useState(false);
 
@@ -108,6 +121,7 @@ const FormCreate = () => {
       ...dataLocation,
       [event.target.id]: event.target.value,
     });
+    checkForm();
   };
 
   const navigate = useNavigate();
@@ -222,7 +236,11 @@ const FormCreate = () => {
               onChange={changeLocation}
             ></input>
           </label>
-          <button type="submit" className="button-login">
+          <button
+            type="submit"
+            className="button-login"
+            disabled={disableButton}
+          >
             crear
           </button>
         </form>

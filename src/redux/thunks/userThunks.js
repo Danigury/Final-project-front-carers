@@ -5,6 +5,7 @@ import {
   logoutUserAction,
   registerUserAction,
 } from "../actions/actionCreators";
+import toast from "react-hot-toast";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
@@ -18,6 +19,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
       const userLogin = jwtDecode(token);
       dispatch(loginUserAction(userLogin));
       localStorage.setItem("user", JSON.stringify(token));
+      toast.success("Ya puedes usar la app!");
     }
   } catch {}
 };
@@ -30,10 +32,12 @@ export const registerUserThunk = (user) => async (dispatch) => {
 
   if (response.status === 200) {
     dispatch(registerUserAction(response.data));
+    toast.success("Registro con éxito!");
   }
 };
 
 export const logoutUserThunk = () => (dispatch) => {
   localStorage.removeItem("user");
   dispatch(logoutUserAction());
+  toast.success("Que vaya bien!");
 };
