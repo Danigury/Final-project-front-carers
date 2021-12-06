@@ -9,7 +9,8 @@ import {
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
     const response = await axios.post(
-      process.env.REACT_APP_LOCATIONS_URL_LOGIN,
+      // process.env.REACT_APP_LOCATIONS_URL_LOGIN,
+      process.env.REACT_APP_URL_LOCAL_LOGIN,
       user
     );
 

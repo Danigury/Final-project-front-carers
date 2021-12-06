@@ -27,6 +27,21 @@ const LocationDetail = ({ location, agenda }) => {
         <p className="text-address__postcode">{location.address.postcode}</p>
         <p className="text-phonenumber">{location.phonenumber}</p>
         <p className="capacity">Capacidad para {location.capacity} personas</p>
+        {/* <MapContainer
+          center={[51.505, -0.09]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer> */}
         <Button
           text="modificar localización"
           className="button-modificar"

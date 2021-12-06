@@ -6,7 +6,9 @@ import {
   updateLocationAction,
 } from "../actions/actionCreators";
 
-const urlApi = process.env.REACT_APP_URL_API;
+// const urlApi = process.env.REACT_APP_URL_API;
+const urlApi = process.env.REACT_APP_URL_LOCAL;
+
 export const loadLocationsThunk = () => {
   return async (dispatch) => {
     try {
