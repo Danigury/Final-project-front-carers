@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  deleteLocationAction,
   loadCurrentLocationAction,
   loadLocationsAction,
   updateLocationAction,
@@ -59,6 +60,20 @@ export const updateLocationThunk = (location, id) => {
 
     if (data.status === 200) {
       dispatch(updateLocationAction(data));
+    }
+  };
+};
+
+export const deleteLocationThunk = (id) => {
+  return async (dispatch) => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    const { data } = await axios.delete(`${urlApi}/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (data.status === 200) {
+      dispatch(deleteLocationAction(id));
     }
   };
 };

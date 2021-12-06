@@ -8,8 +8,12 @@ const LocationDetail = ({ location, agenda }) => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
-  const { loadCurrentLocation } = useLocations();
 
+  const { loadCurrentLocation, deleteLocation } = useLocations();
+  const onDeleteLocation = (id, location) => {
+    deleteLocation(id, location);
+    navigate("/location");
+  };
   const goToUpdatePage = (id) => {
     loadCurrentLocation(id);
     navigate(`/location/update/${id}`);
@@ -23,16 +27,21 @@ const LocationDetail = ({ location, agenda }) => {
         <p className="text-address__postcode">{location.address.postcode}</p>
         <p className="text-phonenumber">{location.phonenumber}</p>
         <p className="capacity">Capacidad para {location.capacity} personas</p>
+        <Button
+          text="modificar localización"
+          className="button-modificar"
+          actionOnClick={() => goToUpdatePage(location.id)}
+        />
+        <Button
+          text="eliminar localización"
+          className="button-eliminar"
+          actionOnClick={() => onDeleteLocation(location.id)}
+        />
       </div>
       <Button
         text="+ localizaciones"
         className="button-volver"
         actionOnClick={() => goToLocationsPage()}
-      />
-      <Button
-        text="modificar localización"
-        className="button-modificar"
-        actionOnClick={() => goToUpdatePage(location.id)}
       />
     </div>
   );

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 import { useNavigate } from "react-router";
 import "./Header.scss";
+import { useState } from "react";
 
 const Header = () => {
   const { logoutUser } = useUser();
@@ -11,11 +12,21 @@ const Header = () => {
     logoutUser();
     navigate("/");
   };
+  const [activeMenu, setActiveMenu] = useState(false);
+  const toggleNavbar = () => {
+    activeMenu ? setActiveMenu(false) : setActiveMenu(true);
+  };
+
   return (
     <div className="header-container">
       <header className="header">
-        <div className="menuToggle">
-          <input className="hamburguer" type="checkbox" />
+        <div className="menuToggle" onClick={toggleNavbar}>
+          <input
+            className="hamburguer"
+            type="checkbox"
+            checked={activeMenu}
+            readOnly
+          />
           <span></span>
           <span></span>
           <span></span>

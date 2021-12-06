@@ -15,6 +15,10 @@ const locationReducer = (location = {}, action) => {
       newLocation = { ...action.location };
       break;
 
+    case actionTypes.deleteLocation:
+      newLocation = { ...action.location };
+      break;
+
     default:
       newLocation = location;
   }
