@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser";
+import "./FormLogin.scss";
 
 const FormLogin = () => {
   const initialUser = {
@@ -38,15 +39,17 @@ const FormLogin = () => {
 
   return (
     <>
-      <h2 className="login__title">inicia sesión</h2>
-      <form
-        className="form-login"
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <label htmlFor="username" className="labels">
-          Nombre
+      <div className="form-container__login">
+        <h2 className="login__title">Inicia sesión</h2>
+        <form
+          className="form-login"
+          noValidate
+          autoComplete="off"
+          onSubmit={onSubmit}
+        >
+          <label htmlFor="username" className="label-login">
+            Nombre
+          </label>
           <input
             placeholder="Nombre"
             type="text"
@@ -55,9 +58,9 @@ const FormLogin = () => {
             value={dataUser.name}
             onChange={changeUser}
           />
-        </label>
-        <label htmlFor="password" className="labels">
-          Contraseña
+          <label htmlFor="password" className="label-login">
+            Contraseña
+          </label>
           <input
             placeholder="Contraseña"
             type="password"
@@ -66,14 +69,14 @@ const FormLogin = () => {
             onChange={changeUser}
             className="form-login__input"
           />
-        </label>
-        <button type="submit" className="button-login">
-          continúa
-        </button>
-        <button className="button-register" onClick={goToRegisterPage}>
-          regístrate
-        </button>
-      </form>
+          <button type="submit" className="button button-login">
+            continúa
+          </button>
+          <button className="button-register" onClick={goToRegisterPage}>
+            regístrate
+          </button>
+        </form>
+      </div>
     </>
   );
 };

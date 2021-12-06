@@ -5,6 +5,7 @@ import {
   loadLocationsAction,
   updateLocationAction,
 } from "../actions/actionCreators";
+import toast from "react-hot-toast";
 
 const urlApi = process.env.REACT_APP_URL_API;
 
@@ -44,7 +45,8 @@ export const createNewLocationThunk = (location) => {
       },
     });
 
-    if (data === 200) {
+    if (data.status === 200) {
+      toast.success("Nueva localización creada!");
       dispatch(createNewLocationThunk(data));
     }
   };
@@ -60,6 +62,7 @@ export const updateLocationThunk = (location, id) => {
     });
 
     if (data.status === 200) {
+      toast.success("Localización actualizada!");
       dispatch(updateLocationAction(data));
     }
   };
@@ -74,6 +77,7 @@ export const deleteLocationThunk = (id) => {
       },
     });
     if (data.status === 200) {
+      toast.success("Localización borrada con éxito!");
       dispatch(deleteLocationAction(id));
     }
   };

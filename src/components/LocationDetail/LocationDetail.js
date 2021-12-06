@@ -8,7 +8,6 @@ const LocationDetail = ({ location, agenda }) => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
-
   const { loadCurrentLocation, deleteLocation } = useLocations();
   const onDeleteLocation = (id, location) => {
     deleteLocation(id, location);
@@ -18,40 +17,39 @@ const LocationDetail = ({ location, agenda }) => {
     loadCurrentLocation(id);
     navigate(`/location/update/${id}`);
   };
+
   return (
     <div className="locationBox-detail">
       <div className="locationBox-detail__text">
         <h2 className="text-name">{location.name}</h2>
-        <p className="text-type">{location.type}</p>
-        <p className="text-address">{location.address.street}</p>
-        <p className="text-address__postcode">{location.address.postcode}</p>
-        <p className="text-phonenumber">{location.phonenumber}</p>
-        <p className="capacity">Capacidad para {location.capacity} personas</p>
-        {/* <MapContainer
-          center={[51.505, -0.09]}
-          zoom={13}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        <p className="text text-type">{location.type}</p>
+        <p className="text text-address">{location.address?.street}</p>
+        <p className="text text-address__postcode">
+          {location.address?.postcode}
+        </p>
+        <p className="text text-phonenumber">{location.phonenumber}</p>
+        <p className="text text-capacity">
+          Capacidad para {location.capacity} personas
+        </p>
+        <iframe
+          className="map"
+          title="map"
+          width="300"
+          height="250"
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address?.coordinates?.longitude}%2C${location.address?.coordinates?.latitude}&amp;layer=mapnik`}
+        ></iframe>
+        <div className="locationBox-detail__buttons">
+          <Button
+            text="modificar localización"
+            className="button button-modificar"
+            actionOnClick={() => goToUpdatePage(location.id)}
           />
-          <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer> */}
-        <Button
-          text="modificar localización"
-          className="button-modificar"
-          actionOnClick={() => goToUpdatePage(location.id)}
-        />
-        <Button
-          text="eliminar localización"
-          className="button-eliminar"
-          actionOnClick={() => onDeleteLocation(location.id)}
-        />
+          <Button
+            text="eliminar localización"
+            className="button button-eliminar"
+            actionOnClick={() => onDeleteLocation(location.id)}
+          />
+        </div>
       </div>
       <Button
         text="+ localizaciones"

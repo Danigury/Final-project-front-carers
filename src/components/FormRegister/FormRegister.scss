@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.register__title {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  text-align: left;
+}
+
+.labels {
+  font-size: 18px;
+  margin: 6px;
+}
+.form-register__input {
+  font-size: 18px;
+  border: 1px solid #065753a6;
+  border-radius: 4px;
+}
+button {
+  margin-top: 20px;
+}
