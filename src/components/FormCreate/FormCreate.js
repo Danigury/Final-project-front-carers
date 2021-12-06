@@ -131,7 +131,7 @@ const FormCreate = () => {
   };
   return (
     <>
-      <div className="form-container">
+      <div className="form-container__location">
         <h2 className="title">crear localización</h2>
         <div>
           <form
@@ -238,22 +238,21 @@ const FormCreate = () => {
               required
               onChange={changeLocation}
             ></input>
-            <div className="buttonbox">
-              <button
-                type="submit"
-                className="button-volver"
-                disabled={disableButton}
-              >
-                crear
-              </button>
-              <Button
-                text="+ localizaciones"
-                className="button-volver"
-                actionOnClick={() => goToLocationsPage()}
-              />
-            </div>
+
+            <button
+              type="submit"
+              className="button-create"
+              disabled={disableButton}
+            >
+              crear
+            </button>
           </form>
         </div>
+        <Button
+          text="+ localizaciones"
+          className="button-volver"
+          actionOnClick={() => goToLocationsPage()}
+        />
         <div>
           <p className="register-message">
             {feedback === true ? "Localización añadida a la base de datos" : ""}
