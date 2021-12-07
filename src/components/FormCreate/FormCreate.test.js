@@ -18,10 +18,10 @@ describe("Given a FormCreate component", () => {
         </Provider>
       );
 
-      const title = screen.getByText(/crear localización/i);
+      const title = screen.getByText(/crear organización/i);
       const select = screen.getByRole("combobox");
       const option = screen.getByRole("option", { name: "Comedor social" });
-      const name = screen.getByLabelText(/Nombre de la localización/i);
+      const name = screen.getByLabelText(/Nombre de la organización/i);
       const street = screen.getByLabelText(/Introduce la dirección/i);
       const postcode = screen.getByLabelText(/Introduce el código postal/i);
       const capacity = screen.getByLabelText(/Introduce el aforo disponible/i);

@@ -132,7 +132,7 @@ const FormCreate = () => {
   return (
     <>
       <div className="form-container__location">
-        <h2 className="title">crear localización</h2>
+        <h2 className="title">crear organización</h2>
         <div>
           <form
             className="form-create"
@@ -146,7 +146,7 @@ const FormCreate = () => {
               name="type"
               onChange={changeLocation}
             >
-              <option>Escoge el tipo de localización</option>
+              <option>Escoge el tipo de organización</option>
               <option value="Albergue social">Albergue social</option>
               <option value="Centro de día">Centro de día</option>
               <option value="Comedor social">Comedor social</option>
@@ -154,7 +154,7 @@ const FormCreate = () => {
             </select>
 
             <label htmlFor="name" className="labels">
-              Nombre de la localización
+              Nombre de la organización
             </label>
             <input
               type="text"

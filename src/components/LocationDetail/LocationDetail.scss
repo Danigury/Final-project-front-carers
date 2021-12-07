@@ -2,27 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 90vw;
+  margin-left: 10px;
+  margin-right: 10px;
 
   .locationBox-detail__text {
     margin-top: 30px;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     background-color: #ffffff;
-    padding: 15px 5px 0 15px;
+    padding: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    padding: 5px 10px;
+    width: 95vw;
+    height: 550px;
+    overflow: hidden;
 
     .locationBox-detail__buttons {
       display: flex;
       justify-content: center;
     }
     .text {
-      font-size: 20px;
+      font-size: 19px;
       color: #737373;
     }
     .text-name {
@@ -31,7 +31,7 @@
     }
 
     .text-capacity {
-      font-size: 20px;
+      font-size: 19px;
       color: #737373;
     }
     .button {
@@ -47,7 +47,8 @@
 
     .map {
       border-style: none;
-      width: 90vw;
+      width: 100%;
+      height: 280px;
     }
   }
 }

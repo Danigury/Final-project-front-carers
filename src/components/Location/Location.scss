@@ -9,6 +9,7 @@
   margin: 5px 0 15px 0;
   position: relative;
   flex-direction: row;
+  overflow: hidden;
 
   &__text {
     width: 300px;
