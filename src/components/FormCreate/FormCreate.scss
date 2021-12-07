@@ -10,7 +10,12 @@
     margin: 0 20px 0 20px;
   }
 }
-
+.button-create {
+  &:active {
+    color: #065753a6;
+    background: none;
+  }
+}
 .title {
   font-size: 22px;
   margin: 10px;
