@@ -117,7 +117,7 @@ const FormUpdate = () => {
   return (
     <>
       <div className="form-container__location">
-        <h2 className="title">modifica la localización</h2>
+        <h2 className="title">modifica la organización</h2>
         <div>
           <form
             className="form-update"
@@ -131,7 +131,7 @@ const FormUpdate = () => {
               name="type"
               onChange={changeLocation}
             >
-              <option>Escoge el tipo de localización</option>
+              <option>Escoge el tipo de organización</option>
               <option value="Albergue social">Albergue social</option>
               <option value="Centro de día">Centro de día</option>
               <option value="Comedor social">Comedor social</option>
@@ -139,7 +139,7 @@ const FormUpdate = () => {
             </select>
 
             <label htmlFor="name" className="labels">
-              Nombre de la localización
+              Nombre de la organización
             </label>
             <input
               type="text"
