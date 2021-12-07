@@ -21,9 +21,15 @@
       border-style: solid;
       border-width: 1px;
       font-size: 24px;
+      &:active {
+        color: rgb(0, 0, 0);
+      }
     }
     .button-noline {
       font-size: 24px;
+      &:active {
+        color: rgb(0, 0, 0);
+      }
     }
   }
 

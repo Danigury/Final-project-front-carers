@@ -27,7 +27,9 @@ const LocationDetail = ({ location, agenda }) => {
         <p className="text text-address__postcode">
           {location.address?.postcode}
         </p>
-        <p className="text text-phonenumber">{location.phonenumber}</p>
+        <a href="tel://location.phonenumber" className="text text-phonenumber">
+          {location.phonenumber}
+        </a>
         <p className="text text-capacity">
           Capacidad para {location.capacity} personas
         </p>

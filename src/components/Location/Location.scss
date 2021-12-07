@@ -30,6 +30,10 @@
     position: absolute;
     right: 10px;
     align-self: flex-end;
+    &:active {
+      color: #1e1e23;
+      border-style: none;
+    }
   }
 
   .capacity {

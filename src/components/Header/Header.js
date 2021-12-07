@@ -56,9 +56,18 @@ const Header = () => {
                 información práctica
               </Link>
             </li>
+            <li>
+              <a
+                href="tel://+34936197311"
+                className="emergency menu__item"
+                to="#"
+              >
+                emergencias
+              </a>
+            </li>
 
             <li>
-              <Link className="menu__item" to="#" onClick={logout}>
+              <Link className="logout menu__item" to="#" onClick={logout}>
                 cerrar sesión
               </Link>
             </li>

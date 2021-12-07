@@ -45,6 +45,21 @@
       margin-right: 50px;
     }
 
+    .button-modificar {
+      margin-top: 5px;
+
+      &:active {
+        color: #1e1e23;
+        border-style: none;
+      }
+    }
+    .button-eliminar {
+      margin-top: 5px;
+      &:active {
+        color: #1e1e23;
+        border-style: none;
+      }
+    }
     .map {
       border-style: none;
       width: 100%;
@@ -60,4 +75,8 @@
   justify-self: end;
   border-style: solid;
   border-width: 1px;
+  &:active {
+    color: #ffffff;
+    background-color: #065753;
+  }
 }

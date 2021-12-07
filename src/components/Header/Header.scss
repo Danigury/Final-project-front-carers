@@ -24,6 +24,9 @@
       left: -10%;
       text-decoration: inherit;
       cursor: inherit;
+      &:active {
+        color: #1e1e23;
+      }
     }
     .menu__item {
       text-decoration: none;
@@ -32,8 +35,8 @@
       font-size: 1.5em;
       font-weight: 400;
       transition: 200ms;
-      .menu__item:hover {
-        opacity: 0.5;
+      &:active {
+        color: #065753;
       }
     }
 
@@ -120,6 +123,20 @@
     .menu li {
       padding: 10px 0;
       transition-delay: 2s;
+    }
+
+    .emergency {
+      color: brown;
+    }
+
+    .logout {
+      border-style: solid;
+      border-width: 1px;
+      padding: 5px;
+
+      &:active {
+        background-color: #065753;
+      }
     }
   }
 }

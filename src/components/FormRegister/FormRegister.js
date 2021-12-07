@@ -12,6 +12,14 @@ const FormRegister = () => {
   };
 
   const [dataUser, setDataUser] = useState(initialDataUser);
+  const [disableButton, setDisableButton] = useState(true);
+  const checkForm = () => {
+    if (dataUser.username !== "" && dataUser.password !== "") {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  };
 
   const navigate = useNavigate();
   const { registerUser } = useUser();
@@ -27,6 +35,7 @@ const FormRegister = () => {
       ...dataUser,
       [event.target.id]: event.target.value,
     });
+    checkForm();
   };
 
   return (
@@ -65,7 +74,11 @@ const FormRegister = () => {
             required
             onChange={changeUser}
           ></input>
-          <button type="submit" className="button-login">
+          <button
+            type="submit"
+            className="button-login"
+            disabled={disableButton}
+          >
             continúa
           </button>
         </form>
