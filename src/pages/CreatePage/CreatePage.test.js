@@ -2,25 +2,28 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
 import { BrowserRouter as Router } from "react-router-dom";
-import UpdatePage from "./UpdatePage";
+import CreatePage from "./CreatePage";
 
 const store = configureStore();
-describe("Given a UpdatePage", () => {
-  describe("When it receives a FormUpdate component", () => {
-    test("Then it should render the update form", () => {
+describe("Given a CreatePage", () => {
+  describe("When it receives a FormCreate component", () => {
+    test("Then it should render the create form", () => {
+      const user = {
+        isAuthenticated: true,
+      };
       render(
         <Provider store={store}>
           <Router>
-            <UpdatePage />
+            <CreatePage user={user} />
           </Router>
         </Provider>
       );
 
       const name = screen.getByRole("heading", {
-        name: "modifica la organización",
+        name: "crear organización",
       });
       const address = screen.getByLabelText(/Introduce la dirección/i);
-      const button = screen.getByRole("button", { name: "guardar" });
+      const button = screen.getByRole("button", { name: "crear" });
       expect(name).toBeInTheDocument();
       expect(address).toBeInTheDocument();
       expect(button).toBeInTheDocument();
