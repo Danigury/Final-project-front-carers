@@ -43,12 +43,12 @@ const Header = () => {
             </li>
             <li>
               <Link className="menu__item" to="/location">
-                localizaciones
+                organizaciones
               </Link>
             </li>
             <li>
               <Link className="menu__item" to="location/create">
-                crear localización
+                crear organización
               </Link>
             </li>
             <li>
@@ -65,7 +65,9 @@ const Header = () => {
           </ul>
         </div>
         <div>
-          <h1 className="logo">carers.</h1>
+          <Link className="logo" to="/location">
+            carers.
+          </Link>
         </div>
       </header>
     </div>

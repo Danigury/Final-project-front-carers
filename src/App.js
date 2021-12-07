@@ -13,6 +13,11 @@ import UpdatePage from "./pages/UpdatePage/UpdatePage";
 
 function App() {
   const user = useSelector(({ user }) => user);
+  const tokenUser = localStorage.getItem("user");
+
+  if (tokenUser) {
+    user.isAuthenticated = true;
+  }
 
   return (
     <>

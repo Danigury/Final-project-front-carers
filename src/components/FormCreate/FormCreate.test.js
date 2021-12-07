@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import configureStore from "../../redux/store/index";
@@ -35,6 +36,26 @@ describe("Given a FormCreate component", () => {
       expect(postcode).toBeInTheDocument();
       expect(capacity).toBeInTheDocument();
       expect(button).toBeInTheDocument();
+    });
+  });
+
+  describe("When the user type in inputs", () => {
+    test("Then it should change a value", () => {
+      render(
+        <Provider store={store}>
+          <Router>
+            <FormCreate />
+          </Router>
+        </Provider>
+      );
+
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Nombre de la organización" }),
+        `Comedor social Raval`
+      );
+      expect(
+        screen.getByRole("textbox", { name: "Nombre de la organización" })
+      ).toHaveValue("Comedor social Raval");
     });
   });
 });

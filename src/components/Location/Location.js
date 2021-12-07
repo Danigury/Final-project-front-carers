@@ -16,9 +16,9 @@ const Location = ({ location, agenda }) => {
   return (
     <>
       <div className="location-ApiBox__text">
-        <h2 className="text-name">{location.name}</h2>
-        <p className="text-type">{location.type}</p>
-        <p className="capacity">Capacidad para {location.capacity} personas</p>
+        <h2 className="text-name">{location?.name}</h2>
+        <p className="text-type">{location?.type}</p>
+        <p className="capacity">Capacidad para {location?.capacity} personas</p>
       </div>
       <Button
         text="detalles"

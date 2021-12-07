@@ -60,5 +60,12 @@
     "fishery": "^2.1.0",
     "husky": "^7.0.0",
     "sass": "^1.43.5"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.js",
+      "!src/reportWebVitals.js",
+      "!src/mocks/handlers.js"
+    ]
   }
 }

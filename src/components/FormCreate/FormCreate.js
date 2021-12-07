@@ -129,6 +129,7 @@ const FormCreate = () => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
+
   return (
     <>
       <div className="form-container__location">
