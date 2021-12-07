@@ -65,7 +65,9 @@ const Header = () => {
           </ul>
         </div>
         <div>
-          <h1 className="logo">carers.</h1>
+          <Link className="logo" to="/location">
+            carers.
+          </Link>
         </div>
       </header>
     </div>

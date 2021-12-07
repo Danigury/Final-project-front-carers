@@ -68,17 +68,21 @@ describe("Given a FormUpdate component", () => {
 
   describe("When it receives component Button", () => {
     test("Then it should invoke the function onClick", () => {
+      const text = "+ localizaciones";
+      const actionOnClick = jest.fn();
+      const className = "button-volver";
+
       render(
-        <Provider store={store}>
-          <Router>
-            <FormUpdate>
-              <Button />
-            </FormUpdate>
-          </Router>
-        </Provider>
+        <Button
+          text={text}
+          actionOnClick={actionOnClick}
+          className={className}
+        />
       );
+
       const button = screen.getByRole("button", { name: "+ localizaciones" });
       userEvent.click(button);
+      expect(actionOnClick).toBeCalled();
     });
   });
 });
