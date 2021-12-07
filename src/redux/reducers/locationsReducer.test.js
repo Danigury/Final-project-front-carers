@@ -1,7 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 import locationsReducer from "./locationsReducer";
 
-describe("Given a locationReducer reducer", () => {
+describe("Given a locationsReducer reducer", () => {
   describe("When it receives a locations list and a loadLocationsAction action", () => {
     test("Then it should return a new locations list", () => {
       const initialLocationsValue = [];

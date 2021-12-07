@@ -26,6 +26,7 @@ const useUser = () => {
   const logoutUser = () => {
     dispatch(logoutUserThunk());
   };
+
   const isLogged = useCallback(() => {
     const isLoggedUser = JSON.parse(localStorage.getItem("user"));
     if (isLoggedUser) {
