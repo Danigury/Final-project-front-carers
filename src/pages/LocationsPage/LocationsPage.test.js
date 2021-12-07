@@ -15,17 +15,17 @@ beforeAll(() => {
 beforeEach(() => {
   server.resetHandlers();
 });
+
 afterAll(() => {
   server.close();
 });
+
 describe("Given a LocationsPage page", () => {
   describe("When it's rendered", () => {
-    test("Then it should a list of locations", async () => {
-      // const locations = LocationsToMock;
+    test("Then it should shows a list of locations", async () => {
       const user = {
         isAuthenticated: true,
       };
-      screen.debug();
       render(
         <Provider store={store}>
           <Router>
@@ -33,7 +33,7 @@ describe("Given a LocationsPage page", () => {
           </Router>
         </Provider>
       );
-      const locationA = await screen.findByText("localizaciones");
+      const locationA = await screen.findByText("organizaciones");
       const locationB = await screen.findByRole("list");
 
       await waitFor(() => {
