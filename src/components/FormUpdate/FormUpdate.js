@@ -239,7 +239,7 @@ const FormUpdate = () => {
           <Button
             text="+ localizaciones"
             className="button-volver"
-            onClick={() => goToLocationsPage()}
+            actionOnClick={() => goToLocationsPage()}
           />
         </div>
       </div>

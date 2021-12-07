@@ -16,7 +16,7 @@ describe("Given a Header component", () => {
         </Provider>
       );
 
-      const logo = screen.getByText(/carers./i);
+      const logo = screen.getByRole("link", { name: "carers." });
       const locations = screen.getByRole("link", { name: "organizaciones" });
       const create = screen.getByRole("link", {
         name: "crear organización",

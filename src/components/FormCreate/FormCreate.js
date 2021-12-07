@@ -129,6 +129,7 @@ const FormCreate = () => {
   const goToLocationsPage = () => {
     navigate(`/location/`);
   };
+
   return (
     <>
       <div className="form-container__location">
@@ -251,7 +252,7 @@ const FormCreate = () => {
         <Button
           text="+ localizaciones"
           className="button-volver"
-          onClick={() => goToLocationsPage()}
+          actionOnClick={() => goToLocationsPage()}
         />
         <div>
           <p className="register-message">
