@@ -43,12 +43,12 @@ const Header = () => {
             </li>
             <li>
               <Link className="menu__item" to="/location">
-                localizaciones
+                organizaciones
               </Link>
             </li>
             <li>
               <Link className="menu__item" to="location/create">
-                crear localización
+                crear organización
               </Link>
             </li>
             <li>

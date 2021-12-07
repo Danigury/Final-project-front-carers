@@ -251,7 +251,7 @@ const FormCreate = () => {
         <Button
           text="+ localizaciones"
           className="button-volver"
-          actionOnClick={() => goToLocationsPage()}
+          onClick={() => goToLocationsPage()}
         />
         <div>
           <p className="register-message">
