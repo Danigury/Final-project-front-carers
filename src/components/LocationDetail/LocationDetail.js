@@ -36,8 +36,9 @@ const LocationDetail = ({ location, agenda }) => {
           title="map"
           width="300"
           height="250"
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address?.coordinates?.longitude}%2C${location.address?.coordinates?.latitude}&amp;layer=mapnik`}
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address?.coordinates?.longitude}%2C${location.address?.coordinates?.latitude}&amp;layer=mapnik&amp;marker={location.address?.coordinates?.latitude}%2C{location.address?.coordinates?.longitude}`}
         ></iframe>
+
         <div className="locationBox-detail__buttons">
           <Button
             text="modificar"
