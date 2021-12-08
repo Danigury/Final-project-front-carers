@@ -7,6 +7,10 @@ const locationReducer = (location = {}, action) => {
       newLocation = { ...action.location };
       break;
 
+    case actionTypes.resetCurrentLocation:
+      newLocation = {};
+      break;
+
     case actionTypes.createNewLocation:
       newLocation = { ...action.location };
       break;

@@ -1,6 +1,7 @@
 const actionTypes = {
   loadLocations: "LOAD_LOCATIONS",
   loadCurrentLocation: "LOAD_CURRENT_LOCATION",
+  resetCurrentLocation: "LOAD_CURRENT_LOCATION",
   createNewLocation: "CREATE_NEW_LOCATION",
   updateLocation: "UPDATE_LOCATION",
   deleteLocation: "DELETE_LOCATION",

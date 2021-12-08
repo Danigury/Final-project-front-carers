@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { resetCurrentLocationAction } from "../redux/actions/actionCreators";
 import {
   loadCurrentLocationThunk,
   loadLocationsThunk,
@@ -32,6 +33,10 @@ const useLocations = () => {
     dispatch(updateLocationThunk(location, id));
   };
 
+  const resetCurrentLocation = () => {
+    dispatch(resetCurrentLocationAction());
+  };
+
   const deleteLocation = (id) => {
     dispatch(deleteLocationThunk(id));
   };
@@ -44,6 +49,7 @@ const useLocations = () => {
     createNewLocation,
     updateLocation,
     deleteLocation,
+    resetCurrentLocation,
   };
 };
 

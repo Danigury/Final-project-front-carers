@@ -77,10 +77,12 @@
 .locationBox-detail__map {
   width: 100%;
   height: 100%;
+  background-color: lawngreen;
   .leaflet-touch {
     width: 100%;
     height: 280px;
     z-index: 0;
+    overflow: hidden;
   }
 }
 
