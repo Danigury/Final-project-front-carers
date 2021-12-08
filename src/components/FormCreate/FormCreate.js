@@ -107,7 +107,7 @@ const FormCreate = () => {
     ) {
       setDisableButton(false);
     } else {
-      setDisableButton(false);
+      setDisableButton(true);
     }
   };
   const { createNewLocation } = useLocations();
