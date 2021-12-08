@@ -6,7 +6,6 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "../../images/marker.png";
-import "leaflet/dist/leaflet.css";
 
 const LocationDetail = ({ location, agenda }) => {
   const { loadCurrentLocation, deleteLocation, resetCurrentLocation } =
@@ -59,7 +58,7 @@ const LocationDetail = ({ location, agenda }) => {
 
                 lng: location?.address?.coordinates?.longitude,
               }}
-              zoom={17}
+              zoom={16}
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <Marker

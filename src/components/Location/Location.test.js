@@ -35,19 +35,19 @@ describe("Given a Location component", () => {
   describe("When it receives a button with onClick event", () => {
     test("Then it should invoke that function", () => {
       const text = "detalles";
-      const actionOnClick = jest.fn();
+      const goToLocation = jest.fn().mockImplementation(() => {});
       const className = "button-detalles";
 
       render(
         <Button
           text={text}
-          actionOnClick={actionOnClick}
+          actionOnClick={goToLocation}
           className={className}
         />
       );
       const button = screen.getByRole("button", { name: "detalles" });
       userEvent.click(button);
-      expect(actionOnClick).toBeCalled();
+      expect(goToLocation).toBeCalled();
     });
   });
 });

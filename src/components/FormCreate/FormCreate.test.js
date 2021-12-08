@@ -53,9 +53,33 @@ describe("Given a FormCreate component", () => {
         screen.getByRole("textbox", { name: "Nombre de la organización" }),
         `Comedor social Raval`
       );
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Introduce la dirección" }),
+        `Calle Murcia`
+      );
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Introduce el código postal" }),
+        `08030`
+      );
+
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Teléfono de contacto" }),
+        `933986595`
+      );
+
       expect(
         screen.getByRole("textbox", { name: "Nombre de la organización" })
       ).toHaveValue("Comedor social Raval");
+      expect(
+        screen.getByRole("textbox", { name: "Introduce la dirección" })
+      ).toHaveValue("Calle Murcia");
+      expect(
+        screen.getByRole("textbox", { name: "Introduce el código postal" })
+      ).toHaveValue("08030");
+
+      expect(
+        screen.getByRole("textbox", { name: "Teléfono de contacto" })
+      ).toHaveValue("933986595");
     });
   });
 });
