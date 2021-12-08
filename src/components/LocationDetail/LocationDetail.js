@@ -2,6 +2,11 @@ import { useNavigate } from "react-router";
 import useLocations from "../../hooks/useLocations";
 import Button from "../Button/Button";
 import "./LocationDetail.scss";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import icon from "../../images/marker.png";
+import "leaflet/dist/leaflet.css";
 
 const LocationDetail = ({ location, agenda }) => {
   const navigate = useNavigate();
@@ -17,29 +22,54 @@ const LocationDetail = ({ location, agenda }) => {
     loadCurrentLocation(id);
     navigate(`/location/update/${id}`);
   };
-
+  const iconMarker = L.icon({
+    iconUrl: icon,
+    iconRetinaUrl: icon,
+    iconSize: [30, 45],
+  });
   return (
     <div className="locationBox-detail">
-      <div className="locationBox-detail__text">
-        <h2 className="text-name">{location.name}</h2>
-        <p className="text text-type">{location.type}</p>
-        <p className="text text-address">{location.address?.street}</p>
-        <p className="text text-address__postcode">
-          {location.address?.postcode}
-        </p>
-        <a href="tel://location.phonenumber" className="text text-phonenumber">
-          {location.phonenumber}
-        </a>
-        <p className="text text-capacity">
-          Capacidad para {location.capacity} personas
-        </p>
-        <iframe
-          className="map"
-          title="map"
-          width="300"
-          height="250"
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.address?.coordinates?.longitude}%2C${location.address?.coordinates?.latitude}&amp;layer=mapnik&amp;marker=${location.address?.coordinates?.latitude}%2C${location.address?.coordinates?.longitude}`}
-        ></iframe>
+      <div className="locationBox-detail__container">
+        <div className="locationBox-detail__text">
+          <h2 className="text-name">{location.name}</h2>
+          <p className="text text-type">{location.type}</p>
+          <p className="text text-address">{location.address?.street}</p>
+          <p className="text text-address__postcode">
+            {location.address?.postcode}
+          </p>
+          <a
+            href={`tel://${location.phonenumber}`}
+            className="text text-phonenumber"
+          >
+            {location.phonenumber}
+          </a>
+          <p className="text text-capacity">
+            Capacidad para {location.capacity} personas
+          </p>
+        </div>
+        <div className="locationBox-detail__map">
+          {location?.address?.coordinates !== undefined ? (
+            <MapContainer
+              center={{
+                lat: location?.address?.coordinates?.latitude,
+
+                lng: location?.address?.coordinates?.longitude,
+              }}
+              zoom={17}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <Marker
+                position={{
+                  lat: location.address?.coordinates?.latitude,
+                  lng: location.address?.coordinates?.longitude,
+                }}
+                icon={iconMarker}
+              />
+            </MapContainer>
+          ) : (
+            ""
+          )}
+        </div>
 
         <div className="locationBox-detail__buttons">
           <Button
