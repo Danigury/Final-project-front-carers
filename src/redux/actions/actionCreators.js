@@ -1,4 +1,3 @@
-import { act } from "react-test-renderer";
 import actionTypes from "./actionTypes";
 
 export const loadLocationsAction = (locations) => ({

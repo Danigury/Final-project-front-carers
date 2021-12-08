@@ -106,6 +106,8 @@ const FormCreate = () => {
       dataLocation.capacity !== 0
     ) {
       setDisableButton(false);
+    } else {
+      setDisableButton(false);
     }
   };
   const { createNewLocation } = useLocations();
