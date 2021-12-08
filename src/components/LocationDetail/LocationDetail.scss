@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
 
-  .locationBox-detail__text {
+  .locationBox-detail__container {
     margin-top: 30px;
     justify-content: center;
     align-items: center;
@@ -16,6 +14,8 @@
     width: 95vw;
     height: 550px;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
 
     .locationBox-detail__buttons {
       display: flex;
@@ -26,7 +26,7 @@
       color: #737373;
     }
     .text-name {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
     }
 
@@ -60,11 +60,6 @@
         border-style: none;
       }
     }
-    .map {
-      border-style: none;
-      width: 100%;
-      height: 280px;
-    }
   }
 }
 .button-volver {
@@ -79,4 +74,20 @@
     color: #ffffff;
     background-color: #065753;
   }
+}
+.locationBox-detail__map {
+  width: 100%;
+  height: 100%;
+  .leaflet-touch {
+    width: 100%;
+    height: 280px;
+    z-index: 0;
+  }
+}
+
+.locationBox-detail__text {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
