@@ -9,11 +9,14 @@ import icon from "../../images/marker.png";
 import "leaflet/dist/leaflet.css";
 
 const LocationDetail = ({ location, agenda }) => {
+  const { loadCurrentLocation, deleteLocation, resetCurrentLocation } =
+    useLocations();
+
   const navigate = useNavigate();
   const goToLocationsPage = () => {
+    resetCurrentLocation();
     navigate(`/location/`);
   };
-  const { loadCurrentLocation, deleteLocation } = useLocations();
   const onDeleteLocation = (id, location) => {
     deleteLocation(id, location);
     navigate("/location");
@@ -48,6 +51,7 @@ const LocationDetail = ({ location, agenda }) => {
           </p>
         </div>
         <div className="locationBox-detail__map">
+          {console.log(location?.address?.coordinates)}
           {location?.address?.coordinates !== undefined ? (
             <MapContainer
               center={{

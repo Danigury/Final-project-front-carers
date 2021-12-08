@@ -1,3 +1,4 @@
+import { act } from "react-test-renderer";
 import actionTypes from "./actionTypes";
 
 export const loadLocationsAction = (locations) => ({
@@ -8,6 +9,10 @@ export const loadLocationsAction = (locations) => ({
 export const loadCurrentLocationAction = (location) => ({
   type: actionTypes.loadCurrentLocation,
   location,
+});
+
+export const resetCurrentLocationAction = () => ({
+  type: actionTypes.resetCurrentLocation,
 });
 
 export const createNewLocationAction = (location) => ({

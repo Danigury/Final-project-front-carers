@@ -3,10 +3,17 @@ import useUser from "../../hooks/useUser";
 import { useNavigate } from "react-router";
 import "./Header.scss";
 import { useState } from "react";
+import useLocations from "../../hooks/useLocations";
 
 const Header = () => {
   const { logoutUser } = useUser();
+  const { resetCurrentLocation } = useLocations();
   const navigate = useNavigate();
+  const resetLocation = (event) => {
+    event.preventDefault();
+    resetCurrentLocation();
+    navigate("/location");
+  };
   const logout = async (event) => {
     event.preventDefault();
     logoutUser();
@@ -42,7 +49,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link className="menu__item" to="/location">
+              <Link
+                className="menu__item"
+                to="/location"
+                onClick={resetLocation}
+              >
                 organizaciones
               </Link>
             </li>
