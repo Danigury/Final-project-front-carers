@@ -23,13 +23,13 @@ const Location = ({ location, agenda }) => {
         <p className="text-type">{location?.type}</p>
         <p className="capacity">Capacidad para {location?.capacity} personas</p>
       </div>
-      <div className="location-ApiBox__button">
-        <Button
-          text="detalles"
-          className="button-detalles"
-          actionOnClick={() => goToLocationDetailsPage(location.id)}
-        />
-      </div>
+      {/* <div className="location-ApiBox__button"> */}
+      <Button
+        text="detalles"
+        className="button-detalles"
+        actionOnClick={() => goToLocationDetailsPage(location.id)}
+      />
+      {/* </div> */}
     </>
   );
 };
