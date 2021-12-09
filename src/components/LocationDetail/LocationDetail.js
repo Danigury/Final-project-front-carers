@@ -50,7 +50,6 @@ const LocationDetail = ({ location, agenda }) => {
           </p>
         </div>
         <div className="locationBox-detail__map">
-          {console.log(location?.address?.coordinates)}
           {location?.address?.coordinates !== undefined ? (
             <MapContainer
               center={{
